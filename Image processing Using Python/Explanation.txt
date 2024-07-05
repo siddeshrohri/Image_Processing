@@ -14,3 +14,12 @@ img_as_float - Convert to 64-bit floating point
 img_as_ubyte - Convert to 8-bit uint
 img_as_uint - Convert to 16-bit uint
 img_as_int - convert to 16-bit int
+
+Important Packages for read images in python:
+1. PIL (PILLOW - Image processing and manipulation fo the images) - Images are not NUMPY in this format
+2. Matplotlib - for plotting (pyplot)
+3. Scikit-image - Image processing, image segmentation, geometric transformation, analysis, etc.
+4. OpenCV - library of programming functions (Computer Vision)
+5. Propritary files to open like czifiles - 4D images example:- (1, 513, 78, 3)
+6. OME-TIFF - 5D image and XML data embedded (1, 1, 3, 513, 78)
+7. Glob - Read all images simultaneously
