@@ -1,0 +1,16 @@
+An image is a numpy array with the numerical values of the pixels.
+A color image has pixels which are subdivided into colors RGB and another variable "ALPHA" which is the transparency of the image.
+Images can be in any of these data type and it is possible for them to be converted to different data types as well:-
+uint8: 0-255
+uint16: 0-65535
+uint32: 0-((2**32)-1)
+float: 0-1 to -1-1
+int8 = -128 - 127
+int16 = -32768 - 32767
+int32 = -2**31 - 2**31 - 1
+
+Functions that convert images to desired dtype and properly rescale their values
+img_as_float - Convert to 64-bit floating point
+img_as_ubyte - Convert to 8-bit uint
+img_as_uint - Convert to 16-bit uint
+img_as_int - convert to 16-bit int
