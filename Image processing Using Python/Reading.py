@@ -77,3 +77,40 @@ for file in glob.glob(path):
     cv2.imshow("Color Image", c)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+#####################
+# Image processing using scipy
+from scipy import misc
+img = misc.imread("Images/cells.jpg")
+print(type(img))
+# Depreciated to use
+
+# CV image reading from skimage
+from skimage import io, img_as_ubyte
+from scipy import ndimage
+import numpy as np
+from matplotlib import pyplot as py
+img = img_as_ubyte(io.imread("Images/cells.jpg", as_gray = True))
+print(type(img))
+print(img.shape, img.dtype)
+print(img[10:115, 20:25])
+
+mean_grey = img.mean()
+max_value = img.max()
+min_value = img.min()
+print(mean_grey, max_value, min_value)
+
+flippedLR = np.fliplr(img)
+flippedUD = np.flipud(img)
+# cmap can be used to change the color of the images 
+rotated = ndimage.rotate(img, 45, reshape = False)
+# filtering
+unifrom_filtered = ndimage.uniform_filter(img, size = 12)
+py.imshow(unifrom_filtered)
+gaussian_filtered = ndimage.gaussian_filter(img, sigma = 30)
+py.imshow(gaussian_filtered)
+median_filtered = ndimage.median_filter(img, 5)
+py.imshow(median_filtered)
+# Sobel filter for edge detection, along any required axis
+sobel_img = ndimage.sobel(img, axis =1)
+py.imshow(sobel_img)
